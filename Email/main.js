@@ -25,16 +25,25 @@ const your_email = prompt('Verifica tramite email se sei invitato, inserisci la 
 // }
 
 //TRAMITE FOR CONTROLLO OGNI EMAIL E OGNI VOLTA CONTROLLA SE PRESENTE L EMAIL INSERITA DALLA PERSONA, NEL CASO LA TROVA FA DIVENTARE LA VARIABILE GLOBALE CREATA ALL ESTERNO POSITICAMENTE
-let accept = 'Non sei invitato alla mia festa'
+let accept = false;
 
-for (let i = 0; i < email.length; i++) {
+for (let i = 0; i < email.length && !accept; i++) {
     const element = email[i];
     if (your_email == element) {
-        accept =  'Sei invitato alla mia festa';
-        break
+        accept =  true;
     }
 }
 
-// GLI DO L ESITO ALLA PERSONA
-alert(accept);
+if (accept) {
+    alert('sei invitato'); 
+} else {
+    alert('non sei invitato');
+}
 
+
+// if (accept == false)
+// GLI DO L ESITO ALLA PERSONA
+// alert(accept);
+
+// niente brake
+// aggiugere booleano e aggiungere un if che controlla i boolean e dice una frase o no
